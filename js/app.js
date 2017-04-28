@@ -3,8 +3,12 @@ $(document).ready(function() {
     url: "http://localhost:3000/books"
   }).done(function(response) {
     response.forEach(function(el, i) {
-      console.log(el.author);
+      // tworzenie nowego diva
+      var newEl = $('<div class="list-group-item">');
+      newEl.text(el.author);
+
+      $('ul').append(newEl);
+      // console.log(el.author);
     });
   });
-
 });
